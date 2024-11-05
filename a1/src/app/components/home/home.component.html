@@ -1,0 +1,14 @@
+<section>
+    <form>
+        <input type="text" name="search" id="txtSearch" #filter placeholder="Filter by City">
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+    </form>
+    <label id="lblList">{{listLabel}}</label>
+</section>
+<section class="results">
+    <app-housing-location 
+        *ngFor="let housingLoc of filteredLocationList" 
+        [housingLocation]="housingLoc">
+
+    </app-housing-location>
+</section>
